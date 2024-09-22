@@ -1,0 +1,6 @@
+site:
+  title: Computer Science Course Union
+  description:
+  base_url: https://cscu.io
+posts:
+  rss: rss.xml

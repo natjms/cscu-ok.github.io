@@ -1,0 +1,148 @@
+---
+data:
+    links:
+    - href: https://clubs.getqpay.com/?tab=memberships&s=9287
+      title: Join the CSCU on Rubric
+      description: >
+        See our latest events and sales, recieve email updates and more
+    - href: https://meet.jit.si/moderated/93592bea4fc26db70a0caaa49ae401b1b49f69da2a0585e5f7c9407fa1f0b755
+      title: Attend a CSCU Executive Council Meeting
+      description: >
+        Next: September 24th, 2024 in EME 1252. Click here to join online
+    - href: https://github.com/cscu-ok/regulations
+      title: CSCU Regulations
+      description: >
+        See here for the governing regulations of the CSCU
+    - href: https://bchacks-5-0.devpost.com/
+      title: BC Hacks 5.0 Projects
+      description: null
+    - href: https://bchacks-4-0.devpost.com/
+      title: BC Hacks 4.0 Projects
+      description: null
+---
+
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <link rel="icon" href="/assets/img/favicon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Computer Science Course Union - Quick links</title>
+    </head>
+    <style>
+body {
+    background-color: #D7ECEF;
+    margin-left: 30%;
+    margin-right: 30%;
+
+    font-family: Sans-Serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1 > img {
+    width: 50%;
+}
+
+ul#social-links {
+    padding-left: 0;
+    text-align: center;
+}
+
+#social-links > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#social-links img {
+    height: 20px;
+}
+
+ul#quick-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+#quick-links li {
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #ffc09f;
+    text-align: center;
+}
+
+#quick-links a {
+    color: black;
+    text-decoration: none;
+}
+
+#quick-links li:hover {
+    box-shadow: 0 0 5px #888;
+}
+
+#quick-links h2 {
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#quick-links .large-link-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#quick-links p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+    </style>
+    <body>
+        <h1>
+            <img src='assets/img/logo.png' alt='CSCU'>
+        </h1>
+        <nav>
+            <ul id='quick-links'>
+                {% for link in page.data.links %}
+                <a href='{{ link.href }}'>
+                    <li>
+                        {% if link.description %}
+                        <h2>{{ link.title }}</h2>
+                        {% else %}
+                        <h2 class='large-link-title'>{{ link.title }}</h2>
+                        {% endif %}
+
+                        {% if link.description %}
+                        <p>
+                            {{ link.description }}
+                        </p>
+                        {% endif %}
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+
+            <ul id='social-links'>
+                <li>
+                    <a href='https://instagram.com/cscu.ok'>
+                        <img src='/assets/img/instagram.png' alt='CSCU.OK on Instagram'>
+                    </a>
+                </li>
+                <li>
+                    <a href='https://discord.gg/9ZD8VDW7gf'>
+                        <img src='/assets/img/discord.png' alt='CSCU Discord server'>
+                    </a>
+                </li>
+                <li>
+                    <a href='mailto:contact@cscusuo.org'>
+                        <img src='/assets/img/mail.png' alt='Email contact@cscusuo.org'>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
