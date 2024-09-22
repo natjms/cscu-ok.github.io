@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# We need this to use globs in a script
+shopt -s extglob
+
+# Build and relocate the site
+cobalt build
+mv _site /tmp/_site
+
+# Move the built site to the build branch
+git checkout build
+rm -rf !(.git)
+cp -R /tmp/_site/* .
+
+# Commit the rebuild
+git add .
+git commit -m "Rebuild site on $(date +%s)"
+
+# Clean up
+rm -r /tmp/_site
+git checkout main
+
+echo 'Done.'
